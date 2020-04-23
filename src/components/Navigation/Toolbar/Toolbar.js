@@ -3,12 +3,16 @@ import styles from './Toolbar.module.css';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 
-const toolbar = () => {
+const toolbar = (props) => {
     return(
         <header className = {styles.Toolbar}>
-            <div>MENU</div>
+            <div className={styles.DrawerToggle} onClick={props.opened}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <Logo></Logo>
-            <nav>
+            <nav className={styles.DesktopOnly}>
                 <NavigationItems/>
             </nav>
         </header>
